@@ -1,3 +1,5 @@
+mod base58;
+
 fn main() {
-    println!("Hello, world!");
+    println!("{}", base58::base58(32))
 }
