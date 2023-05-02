@@ -16,6 +16,7 @@ struct Cli {
 enum Algorithm {
     #[default]
     Base58,
+    Base64,
     Hex,
 }
 
@@ -24,6 +25,7 @@ fn main() {
 
     match cli.algorithm {
         Algorithm::Base58 => println!("{}", algorithms::base58(cli.bytes)),
+        Algorithm::Base64 => println!("{}", algorithms::base64(cli.bytes)),
         Algorithm::Hex => println!("{}", algorithms::hex(cli.bytes)),
     }
 }
