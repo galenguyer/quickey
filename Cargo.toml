@@ -1,16 +1,18 @@
 [package]
 name = "quickey"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Galen Guyer <galen@galenguyer.com>"]
 description = "Quick password and API key generation"
 license = "MIT"
 edition = "2021"
 
 [features]
-default = ["base58"]
+default = ["base58", "hex"]
 base58 = ["dep:bs58"]
+hex = ["dep:hex"]
 
 [dependencies]
 bs58 = { version = "0.4.0", optional = true }
 clap = { version = "4.2.5", features = ["cargo", "derive"] }
+hex = { version = "0.4.3", optional = true }
 rand = "0.8.5"

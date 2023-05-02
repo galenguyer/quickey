@@ -1,6 +1,6 @@
 use clap::{Parser, ValueEnum};
 
-mod base58;
+mod algorithms;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -16,12 +16,14 @@ struct Cli {
 enum Algorithm {
     #[default]
     Base58,
+    Hex,
 }
 
 fn main() {
     let cli = Cli::parse();
 
     match cli.algorithm {
-        Algorithm::Base58 => println!("{}", base58::base58(cli.bytes)),
+        Algorithm::Base58 => println!("{}", algorithms::base58(cli.bytes)),
+        Algorithm::Hex => println!("{}", algorithms::hex(cli.bytes)),
     }
 }
