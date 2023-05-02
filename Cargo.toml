@@ -1,0 +1,7 @@
+[package]
+name = "quickey"
+version = "0.1.0"
+author = ["Galen Guyer <galen@galenguyer.com>"]
+description = "Quick password and API key generation"
+license = "MIT"
+edition = "2021"
